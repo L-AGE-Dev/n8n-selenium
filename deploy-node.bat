@@ -18,7 +18,7 @@ if %errorlevel% neq 0 (
 )
 
 echo Copying files to Docker volume dashboard_n8n_data...
-docker run --rm -v dashboard_n8n_data:/n8n_data -v "%cd%":/source alpine sh -c "rm -rf /n8n_data/node_modules/%PACKAGE_NAME% && mkdir -p /n8n_data/node_modules/%PACKAGE_NAME% && cp -a /source/dist /n8n_data/node_modules/%PACKAGE_NAME%/ && cp /source/package.json /n8n_data/node_modules/%PACKAGE_NAME%/"
+docker run --rm -v dashboard_n8n_data:/n8n_data -v "%cd%":/source alpine sh -c "rm -rf /n8n_data/nodes/node_modules/%PACKAGE_NAME% && mkdir -p /n8n_data/nodes/node_modules/%PACKAGE_NAME% && cp -a /source/dist /n8n_data/nodes/node_modules/%PACKAGE_NAME%/ && cp -a /source/icons /n8n_data/nodes/node_modules/%PACKAGE_NAME%/ && cp /source/package.json /n8n_data/nodes/node_modules/%PACKAGE_NAME%/ && rm -rf /n8n_data/node_modules/%PACKAGE_NAME% && mkdir -p /n8n_data/node_modules/%PACKAGE_NAME% && cp -a /source/dist /n8n_data/node_modules/%PACKAGE_NAME%/ && cp -a /source/icons /n8n_data/node_modules/%PACKAGE_NAME%/ && cp /source/package.json /n8n_data/node_modules/%PACKAGE_NAME%/"
 
 echo Deployment completed successfully.
 

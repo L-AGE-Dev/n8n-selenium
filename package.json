@@ -1,12 +1,12 @@
 {
-	"name": "n8n-nodes-lage-plenty",
+	"name": "n8n-nodes-lage-selenium",
 	"version": "0.1.0",
-	"description": "n8n node package for plenty",
+	"description": "n8n node package for selenium",
 	"license": "MIT",
 	"homepage": "https://lage-beauty.de/",
 	"keywords": [
 		"n8n-community-node-package",
-		"plenty"
+		"selenium"
 	],
 	"author": {
 		"name": "Joel Schnubel",
@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/L-AGE-Dev/n8n-plenty"
+		"url": "https://github.com/L-AGE-Dev/n8n-selenium"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -26,16 +26,17 @@
 		"prepublishOnly": "n8n-node prerelease"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"icons"
 	],
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"strict": true,
 		"credentials": [
-			"dist/credentials/PlentyApi.credentials.js"
+			"dist/credentials/SeleniumApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/Plenty/Plenty.node.js"
+			"dist/nodes/Selenium/Selenium.node.js"
 		]
 	},
 	"devDependencies": {
