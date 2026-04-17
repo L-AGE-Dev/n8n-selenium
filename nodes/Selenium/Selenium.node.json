@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-lage-selenium",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["LAGE", "Selenium", "Web Automation"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://www.selenium.dev/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://www.selenium.dev/"
+			}
+		]
+	}
+}
