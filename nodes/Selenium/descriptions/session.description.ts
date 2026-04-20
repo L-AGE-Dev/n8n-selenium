@@ -24,8 +24,7 @@ export const sessionDescription: INodeProperties[] = [
 				displayName: 'Experimental Options (JSON)',
 				name: 'experimentalOptions',
 				type: 'json',
-				default:
-					'{\n  "excludeSwitches": ["enable-automation"],\n  "useAutomationExtension": false\n}',
+				default: '{}',
 				description: 'JSON object for Chrome experimental options',
 			},
 			{
@@ -40,8 +39,7 @@ export const sessionDescription: INodeProperties[] = [
 				name: 'chromeOptions',
 				type: 'string',
 				typeOptions: { rows: 4 },
-				default:
-					'--disable-gpu,--no-sandbox,--disable-dev-shm-usage,--disable-blink-features=AutomationControlled,--disable-infobars,--disable-popup-blocking,--disable-notifications,--disable-background-networking,--disable-sync,--metrics-recording-only,--disable-background-timer-throttling,--lang=de-DE,de,--timezone=Europe/Berlin,--start-maximized,--window-position=0,0,--ignore-certificate-errors,--allow-running-insecure-content',
+				default: '',
 				description: 'Comma-separated list of Chrome options (e.g., --headless, --disable-gpu)',
 			},
 		],
