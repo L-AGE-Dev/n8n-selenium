@@ -1,9 +1,8 @@
-import { IExecuteFunctions, IHttpRequestOptions, NodeOperationError } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions, NodeOperationError, sleep } from 'n8n-workflow';
 import { IGenericRecord } from './types';
 
-// eslint-disable-next-line @n8n/community-nodes/no-restricted-globals
-export const wait = async (ms: number): Promise<void> =>
-	new Promise((resolve) => setTimeout(resolve, ms));
+ 
+export const wait = async (ms: number): Promise<void> => sleep(ms);
 
 export const parseSelector = (selector: string): { using: string; value: string } => {
 	let using = 'css selector';
