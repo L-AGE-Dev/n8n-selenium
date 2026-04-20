@@ -17,7 +17,8 @@
 		"url": "git+https://github.com/L-AGE-Dev/n8n-selenium.git"
 	},
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"tag": "next"
 	},
 	"scripts": {
 		"build": "n8n-node build",
