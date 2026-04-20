@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-lage-selenium",
-	"version": "1.0.0",
+	"version": "1.0.1-0",
 	"description": "n8n node package for selenium",
 	"license": "MIT",
 	"homepage": "https://lage-beauty.de/",
