@@ -23,7 +23,7 @@ export async function clickElement(
 	const requestOptions: IHttpRequestOptions = {
 		method: 'POST',
 		url: `${baseUrl}/session/${sessionId}/element/${elementId}/click`,
-		body: {},
+		body: { id: elementId },
 		json: true,
 		timeout,
 	};
