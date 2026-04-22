@@ -37,7 +37,7 @@ export async function startSession(
 	if (additionalFields.proxy) {
 		const proxyString = additionalFields.proxy;
 		proxySettings = {
-			proxyType: 'MANUAL',
+			proxyType: 'manual',
 			httpProxy: proxyString,
 			sslProxy: proxyString,
 		};
@@ -178,13 +178,18 @@ export async function closeAllSessions(
 		if (Array.isArray(activeSessions)) {
 			for (const session of activeSessions) {
 				if (session.id) {
-					await context.helpers.httpRequestWithAuthentication.call(context, 'seleniumApi', {
-						method: 'DELETE',
-						url: `${baseUrl}/session/${session.id}`,
-						json: true,
-						timeout,
-					});
-					closedSessions.push(session.id);
+					try {
+						await context.helpers.httpRequestWithAuthentication.call(context, 'seleniumApi', {
+							method: 'DELETE',
+							url: `${baseUrl}/session/${session.id}`,
+							json: true,
+							timeout,
+						});
+						closedSessions.push(session.id);
+					} catch (deleteError) {
+						void deleteError;
+						// Ignored, try to close the next one
+					}
 				}
 			}
 		}
