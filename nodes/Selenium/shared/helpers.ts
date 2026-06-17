@@ -4,6 +4,21 @@ import { IGenericRecord } from './types';
  
 export const wait = async (ms: number): Promise<void> => sleep(ms);
 
+/**
+ * Normalizes the credential URL into a clean Selenium 4 root URL.
+ *
+ * Strips trailing slashes and a legacy `/wd/hub` suffix so that root-level
+ * endpoints (`/graphql`, `/status`, `/session`) resolve correctly even when the
+ * user configured an older hub-style base URL such as `http://host:4444/wd/hub`.
+ */
+export const normalizeBaseUrl = (url: string): string => {
+	return url
+		.trim()
+		.replace(/\/+$/, '')
+		.replace(/\/wd\/hub$/i, '')
+		.replace(/\/+$/, '');
+};
+
 export const parseSelector = (selector: string): { using: string; value: string } => {
 	let using = 'css selector';
 	let value = selector;

@@ -20,6 +20,7 @@ import {
 	getAllSessions,
 	startSession,
 } from './operations/session.operations';
+import { normalizeBaseUrl } from './shared/helpers';
 
 export class Selenium implements INodeType {
 	description: INodeTypeDescription = {
@@ -38,7 +39,7 @@ export class Selenium implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				// eslint-disable-next-line @n8n/community-nodes/no-credential-reuse
+				displayName: 'Selenium API',
 				name: 'seleniumApi',
 				required: true,
 			},
@@ -125,7 +126,7 @@ export class Selenium implements INodeType {
 			throw new NodeOperationError(this.getNode(), 'No credentials provided!');
 		}
 
-		const baseUrl = credentials.url as string;
+		const baseUrl = normalizeBaseUrl(credentials.url as string);
 
 		for (let i = 0; i < items.length; i++) {
 			try {

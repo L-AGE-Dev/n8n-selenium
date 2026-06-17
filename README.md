@@ -25,7 +25,7 @@ Search for `n8n-nodes-lage-selenium` in the community nodes panel.
 | ---------------------- | ------------------------------------------------------------------------------------------------ |
 | **Start Session**      | Creates a new Chrome WebDriver session. Returns a `sessionId` used by all subsequent operations. |
 | **Close Session**      | Closes an active WebDriver session by its `sessionId`.                                           |
-| **Get All Sessions**   | Returns a list of all currently active WebDriver sessions on the server.                         |
+| **Get All Sessions**   | Returns all currently active WebDriver sessions (via the Selenium 4 Grid GraphQL endpoint), including each session's browser, current page URL, and title. |
 | **Close All Sessions** | Closes every active session on the server at once.                                               |
 | **Navigate**           | Navigates the browser to a URL. Optionally waits for a selector to appear before continuing.     |
 | **Get Page Source**    | Returns the full HTML source of the current page.                                                |
